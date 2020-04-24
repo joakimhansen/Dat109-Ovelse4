@@ -1,0 +1,22 @@
+class Craps {
+
+	Spiller spiller;
+	void spill() {}
+
+}
+
+
+class Spiller {
+
+	String navn;
+	Terning terning1;
+	Terning terning2;
+	
+	int trill() {}
+
+}  
+
+class Terning {
+	int verdi;
+	int trillTerning() {}
+}
