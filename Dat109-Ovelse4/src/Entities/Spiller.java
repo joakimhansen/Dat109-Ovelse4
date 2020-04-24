@@ -1,74 +1,44 @@
 package Entities;
 /*PLEASE DO NOT EDIT THIS CODE*/
+
 /*This code was generated using the UMPLE 1.29.0.4181.a593105a9 modeling language!*/
 
-
-
 // line 9 "Test.ump"
-public class Spiller
-{
+public class Spiller {
 
-  //------------------------
-  // MEMBER VARIABLES
-  //------------------------
+	// ------------------------
+	// MEMBER VARIABLES
+	// ------------------------
 
-  //Spiller Attributes
-  private String navn;
-  private Terning terning;
+	// Spiller Attributes
+	private String navn;
+	private Terning terning1;
+	private Terning terning2;
 
-  //------------------------
-  // CONSTRUCTOR
-  //------------------------
+	// ------------------------
+	// CONSTRUCTOR
+	// ------------------------
 
-  public Spiller(String aNavn, Terning aTerning)
-  {
-    navn = aNavn;
-    terning = aTerning;
-  }
+	public Spiller(String aNavn) {
+		navn = aNavn;
+		terning1 = new Terning();
+		terning2 = new Terning();
+	}
 
-  //------------------------
-  // INTERFACE
-  //------------------------
+	// ------------------------
+	// INTERFACE
+	// ------------------------
 
-  public boolean setNavn(String aNavn)
-  {
-    boolean wasSet = false;
-    navn = aNavn;
-    wasSet = true;
-    return wasSet;
-  }
+	// line 14 "Test.ump"
+	public int trill() {
+		terning1.trillTerning();
+		terning2.trillTerning();
+		System.out.println("1.Terning: " + terning1.getVerdi() + "\n2.Terning: " + terning2.getVerdi());
+		return (terning1.getVerdi() + terning2.getVerdi());
+	}
 
-  public boolean setTerning(Terning aTerning)
-  {
-    boolean wasSet = false;
-    terning = aTerning;
-    wasSet = true;
-    return wasSet;
-  }
+	public String getNavn() {
+		return navn;
+	}
 
-  public String getNavn()
-  {
-    return navn;
-  }
-
-  public Terning getTerning()
-  {
-    return terning;
-  }
-
-  public void delete()
-  {}
-
-  // line 14 "Test.ump"
-  public int trill(){
-    
-  }
-
-
-  public String toString()
-  {
-    return super.toString() + "["+
-            "navn" + ":" + getNavn()+ "]" + System.getProperties().getProperty("line.separator") +
-            "  " + "terning" + "=" + (getTerning() != null ? !getTerning().equals(this)  ? getTerning().toString().replaceAll("  ","    ") : "this" : "null");
-  }
 }
